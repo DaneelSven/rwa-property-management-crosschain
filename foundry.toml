@@ -1,6 +1,28 @@
-[profile.default]
-src = "src"
-out = "out"
-libs = ["lib"]
+# [profile.default]
+# src = "src"
+# out = "out"
+# libs = ["lib"]
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+
+
+[profile.default]
+src = "contracts"
+out = "out"
+libs = ["node_modules", "lib"]
+test = "test/foundry"
+solc_version = "0.8.25"
+evm_version = "shanghai"
+optimizer_runs = 800
+via_ir = true
+ffi = true
+ast = true
+build_info = true
+extra_output = ["storageLayout"]
+incremental = true
+
+auto_detect_solc = true
+
+[fuzz]
+runs = 50_000
+seed = '0x42'
